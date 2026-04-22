@@ -145,3 +145,22 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); } });
   input.addEventListener('input', () => { input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 90) + 'px'; });
 })();
+
+/* ── FILTER PROJECTS ─────────────────────────────────────── */
+function filterProjects(btn, filter) {
+  // Update active button
+  document.querySelectorAll('.proj-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Show/hide cards
+  document.querySelectorAll('.proj-small-card').forEach(card => {
+    const cat = card.getAttribute('data-category');
+    if (filter === 'all' || cat === filter) {
+      card.style.display = 'flex';
+      // Re-trigger reveal if not yet visible
+      card.classList.add('reveal');
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
