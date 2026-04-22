@@ -8,470 +8,6 @@
   <meta property="og:description" content="3 published journal papers, 5 conference papers. Seeking PhD in industrial engineering systems." />
   <title>Fahimul Haque — Researcher</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- ─── Styles for new sections ─────────────────────────────────────── -->
-  <style>
-
-    /* ══ WORK EXPERIENCE ══════════════════════════════════════════════ */
-    #work-experience { padding: 80px 0; }
-
-    .work-timeline {
-      position: relative;
-      padding-left: 30px;
-    }
-    .work-timeline::before {
-      content: '';
-      position: absolute;
-      left: 6px;
-      top: 10px;
-      bottom: 10px;
-      width: 2px;
-      background: linear-gradient(to bottom, #7fd4a0 60%, transparent);
-      border-radius: 2px;
-    }
-    .work-entry {
-      position: relative;
-      margin-bottom: 28px;
-      background: var(--surface, rgba(255,255,255,0.04));
-      border: 1px solid var(--border, rgba(127,212,160,0.14));
-      border-radius: 14px;
-      padding: 26px 28px;
-      transition: border-color .25s ease, transform .25s ease;
-    }
-    .work-entry:last-child { margin-bottom: 0; }
-    .work-entry::before {
-      content: '';
-      position: absolute;
-      left: -24px;
-      top: 26px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #7fd4a0;
-      border: 2px solid var(--bg, #0a1a10);
-      box-shadow: 0 0 0 4px rgba(127,212,160,.18);
-      z-index: 1;
-    }
-    .work-entry:hover {
-      border-color: rgba(127,212,160,.5);
-      transform: translateX(5px);
-    }
-    .work-entry-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-    .work-entry-title {
-      font-size: 1.0rem;
-      font-weight: 700;
-      color: var(--ink, #e8f0ea);
-      font-family: var(--font-head, serif);
-      line-height: 1.3;
-    }
-    .work-entry-badge {
-      font-size: .72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .07em;
-      padding: 3px 11px;
-      border-radius: 20px;
-      white-space: nowrap;
-      background: rgba(127,212,160,.1);
-      border: 1px solid rgba(127,212,160,.28);
-      color: #7fd4a0;
-    }
-    .work-entry-company {
-      font-size: .86rem;
-      color: #7fd4a0;
-      font-weight: 500;
-      margin-bottom: 14px;
-    }
-    .work-entry-company span {
-      color: var(--ink-mid, rgba(232,240,234,.5));
-      font-weight: 400;
-      font-size: .8rem;
-      margin-left: 6px;
-    }
-    .work-bullets {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .work-bullets li {
-      position: relative;
-      padding-left: 18px;
-      font-size: .875rem;
-      color: var(--ink-mid, rgba(232,240,234,.65));
-      line-height: 1.7;
-      margin-bottom: 4px;
-    }
-    .work-bullets li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: #7fd4a0;
-      font-size: .72rem;
-      top: 5px;
-    }
-    .work-entry-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-    .work-entry-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: .79rem;
-      color: #7fd4a0;
-      text-decoration: none;
-      opacity: .75;
-      transition: opacity .2s;
-    }
-    .work-entry-link:hover { opacity: 1; }
-
-    /* ══ ACADEMIC & DATA PROJECTS ════════════════════════════════════ */
-    #academic-projects { padding: 80px 0; }
-
-    .proj-filter-tabs {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 32px;
-    }
-    .proj-filter-btn {
-      padding: 7px 18px;
-      border-radius: 6px;
-      border: 1px solid var(--border, rgba(127,212,160,.14));
-      background: transparent;
-      color: var(--ink-mid, rgba(232,240,234,.6));
-      font-size: .8rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all .2s;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-    }
-    .proj-filter-btn.active,
-    .proj-filter-btn:hover {
-      background: rgba(127,212,160,.1);
-      border-color: rgba(127,212,160,.4);
-      color: #7fd4a0;
-    }
-    .proj-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-      gap: 20px;
-    }
-    .proj-small-card {
-      background: var(--surface, rgba(255,255,255,.04));
-      border: 1px solid var(--border, rgba(127,212,160,.12));
-      border-radius: 14px;
-      padding: 22px 24px;
-      transition: border-color .25s, transform .25s;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .proj-small-card:hover {
-      border-color: rgba(127,212,160,.4);
-      transform: translateY(-4px);
-    }
-    .proj-small-card[data-type="hidden"] { display: none; }
-
-    .proj-small-type {
-      font-size: .69rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .09em;
-      padding: 2px 9px;
-      border-radius: 4px;
-      width: fit-content;
-    }
-    .proj-type-data  { background: rgba(96,165,250,.1);  color: #60a5fa; border: 1px solid rgba(96,165,250,.22); }
-    .proj-type-eng   { background: rgba(251,146,60,.1);  color: #fb923c; border: 1px solid rgba(251,146,60,.22); }
-    .proj-type-code  { background: rgba(167,139,250,.1); color: #a78bfa; border: 1px solid rgba(167,139,250,.22); }
-
-    .proj-small-title {
-      font-size: .95rem;
-      font-weight: 700;
-      color: var(--ink, #e8f0ea);
-      font-family: var(--font-head, serif);
-      line-height: 1.4;
-    }
-    .proj-small-desc {
-      font-size: .855rem;
-      color: var(--ink-mid, rgba(232,240,234,.62));
-      line-height: 1.65;
-      flex: 1;
-    }
-    .proj-small-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 2px;
-    }
-    .proj-small-tools {
-      display: flex;
-      gap: 5px;
-      flex-wrap: wrap;
-    }
-    .proj-small-tool {
-      font-size: .69rem;
-      padding: 2px 7px;
-      border-radius: 4px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.1);
-      color: var(--ink-mid, rgba(232,240,234,.45));
-    }
-    .proj-small-link {
-      font-size: .78rem;
-      color: #7fd4a0;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      opacity: .78;
-      transition: opacity .2s;
-      flex-shrink: 0;
-    }
-    .proj-small-link:hover { opacity: 1; }
-
-    /* ══ COMPETITIONS ════════════════════════════════════════════════ */
-    #competitions { padding: 80px 0; }
-
-    .comp-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .comp-card {
-      background: var(--surface, rgba(255,255,255,.04));
-      border: 1px solid var(--border, rgba(127,212,160,.12));
-      border-radius: 14px;
-      padding: 22px 24px;
-      transition: border-color .25s, transform .25s;
-      position: relative;
-      overflow: hidden;
-    }
-    .comp-card::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, #7fd4a0, transparent);
-      opacity: 0;
-      transition: opacity .25s;
-    }
-    .comp-card:hover {
-      border-color: rgba(127,212,160,.42);
-      transform: translateY(-4px);
-    }
-    .comp-card:hover::after { opacity: 1; }
-    .comp-event {
-      font-size: .72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      color: #7fd4a0;
-      margin-bottom: 7px;
-    }
-    .comp-name {
-      font-size: .94rem;
-      font-weight: 700;
-      color: var(--ink, #e8f0ea);
-      font-family: var(--font-head, serif);
-      margin-bottom: 8px;
-      line-height: 1.4;
-    }
-    .comp-desc {
-      font-size: .845rem;
-      color: var(--ink-mid, rgba(232,240,234,.6));
-      line-height: 1.62;
-    }
-    .comp-result {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: .73rem;
-      font-weight: 600;
-      margin-top: 12px;
-      padding: 3px 10px;
-      border-radius: 20px;
-    }
-    .comp-result.reached   { background: rgba(127,212,160,.1); color: #7fd4a0; border: 1px solid rgba(127,212,160,.25); }
-    .comp-result.campus    { background: rgba(251,146,60,.1);  color: #fb923c; border: 1px solid rgba(251,146,60,.25); }
-    .comp-result.prefinal  { background: rgba(96,165,250,.1);  color: #60a5fa; border: 1px solid rgba(96,165,250,.25); }
-
-    /* ══ INDUSTRIAL VISITS ═══════════════════════════════════════════ */
-    #industrial-visits { padding: 80px 0; }
-
-    .visit-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: 20px;
-    }
-    .visit-card {
-      background: var(--surface, rgba(255,255,255,.04));
-      border: 1px solid var(--border, rgba(127,212,160,.12));
-      border-radius: 14px;
-      padding: 22px 24px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      transition: border-color .25s, transform .2s;
-    }
-    .visit-card:hover {
-      border-color: rgba(127,212,160,.38);
-      transform: translateY(-3px);
-    }
-    .visit-icon-wrap {
-      width: 46px;
-      height: 46px;
-      border-radius: 10px;
-      flex-shrink: 0;
-      background: rgba(127,212,160,.09);
-      border: 1px solid rgba(127,212,160,.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.35rem;
-    }
-    .visit-name {
-      font-size: .95rem;
-      font-weight: 700;
-      color: var(--ink, #e8f0ea);
-      font-family: var(--font-head, serif);
-      margin-bottom: 5px;
-    }
-    .visit-desc {
-      font-size: .845rem;
-      color: var(--ink-mid, rgba(232,240,234,.6));
-      line-height: 1.58;
-    }
-
-    /* ══ LEADERSHIP & ACTIVITIES (replaces old awards grid) ═════════ */
-    .activity-stack { display: flex; flex-direction: column; gap: 14px; }
-    .activity-item {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      background: var(--surface, rgba(255,255,255,.04));
-      border: 1px solid var(--border, rgba(127,212,160,.12));
-      border-radius: 12px;
-      padding: 18px 22px;
-      transition: border-color .25s;
-    }
-    .activity-item:hover { border-color: rgba(127,212,160,.38); }
-    .activity-icon { font-size: 1.45rem; flex-shrink: 0; line-height: 1.3; }
-    .activity-content { flex: 1; }
-    .activity-title {
-      font-size: .95rem;
-      font-weight: 700;
-      color: var(--ink, #e8f0ea);
-      font-family: var(--font-head, serif);
-      margin-bottom: 2px;
-    }
-    .activity-org {
-      font-size: .82rem;
-      color: #7fd4a0;
-      margin-bottom: 3px;
-    }
-    .activity-period {
-      font-size: .75rem;
-      color: var(--ink-mid, rgba(232,240,234,.38));
-      letter-spacing: .03em;
-      margin-bottom: 6px;
-    }
-    .activity-desc {
-      font-size: .845rem;
-      color: var(--ink-mid, rgba(232,240,234,.6));
-      line-height: 1.6;
-    }
-
-    /* ══ REFERENCES ══════════════════════════════════════════════════ */
-    #references { padding: 80px 0; }
-
-    .ref-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
-    }
-    .ref-card {
-      background: var(--surface, rgba(255,255,255,.04));
-      border: 1px solid var(--border, rgba(127,212,160,.12));
-      border-radius: 14px;
-      padding: 28px 30px;
-      transition: border-color .25s;
-      position: relative;
-      overflow: hidden;
-    }
-    .ref-card::before {
-      content: '"';
-      position: absolute;
-      top: -12px; right: 22px;
-      font-size: 7rem;
-      color: rgba(127,212,160,.055);
-      font-family: Georgia, serif;
-      line-height: 1;
-      pointer-events: none;
-    }
-    .ref-card:hover { border-color: rgba(127,212,160,.45); }
-    .ref-name {
-      font-size: 1.06rem;
-      font-weight: 700;
-      color: var(--ink, #e8f0ea);
-      font-family: var(--font-head, serif);
-      margin-bottom: 3px;
-    }
-    .ref-role {
-      font-size: .84rem;
-      color: #7fd4a0;
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-    .ref-dept {
-      font-size: .81rem;
-      color: var(--ink-mid, rgba(232,240,234,.52));
-      line-height: 1.45;
-      margin-bottom: 16px;
-    }
-    .ref-divider {
-      height: 1px;
-      background: var(--border, rgba(127,212,160,.12));
-      margin-bottom: 14px;
-    }
-    .ref-contact-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .ref-contact-row a {
-      font-size: .82rem;
-      color: var(--ink-mid, rgba(232,240,234,.55));
-      text-decoration: none;
-      transition: color .2s;
-      word-break: break-all;
-    }
-    .ref-contact-row a:hover { color: #7fd4a0; }
-
-    /* ══ RESPONSIVE TWEAKS ═══════════════════════════════════════════ */
-    @media (max-width: 640px) {
-      .proj-cards-grid,
-      .comp-grid,
-      .visit-grid,
-      .ref-grid { grid-template-columns: 1fr; }
-      .work-timeline { padding-left: 20px; }
-      .work-entry::before { left: -15px; }
-    }
-
-  </style>
 </head>
 <body>
 
@@ -486,12 +22,10 @@
     </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
-      <li><a href="#work-experience">Experience</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#awards">Activities</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
   </div>
@@ -509,7 +43,7 @@
     <div class="hero-text">
       <p class="hero-eyebrow">Industrial &amp; Production Engineering · BUET · Dhaka</p>
       <h1 class="hero-name">
-        Fahim
+        Fahimul
         <em>Haque</em>
       </h1>
       <p class="hero-role">Researcher · Data Scientist · Aspiring PhD Candidate</p>
@@ -641,8 +175,8 @@
         <div class="stat-box" style="margin-top:0">
           <p class="stat-box-title">Leadership</p>
           <div class="stat-row">
-            <span class="stat-row-label">VP — BUET EDC</span>
-            <span class="stat-row-value" style="font-size:0.8rem;font-family:var(--font-body);color:var(--ink-mid)">Feb 2022–</span>
+            <span class="stat-row-label">Class Representative</span>
+            <span class="stat-row-value" style="font-size:0.8rem;font-family:var(--font-body);color:var(--ink-mid)">IPE, BUET</span>
           </div>
           <div class="stat-row">
             <span class="stat-row-label">Batch Representative</span>
@@ -653,61 +187,6 @@
             <span class="stat-row-value" style="font-size:0.8rem;font-family:var(--font-body);color:var(--emerald)">1st Place IEOM '25</span>
           </div>
         </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     WORK EXPERIENCE  ← NEW
-═══════════════════════════════════════════ -->
-<section id="work-experience">
-  <div class="container">
-    <span class="section-label reveal">Professional Background</span>
-    <h2 class="section-title reveal reveal-delay-1">Work <em>Experience</em></h2>
-    <div class="emerald-rule reveal reveal-delay-2"></div>
-
-    <div class="work-timeline">
-
-      <!-- Entry 1: GPH Ispat Internship -->
-      <div class="work-entry reveal">
-        <div class="work-entry-header">
-          <p class="work-entry-title">Industrial Engineering Intern</p>
-          <span class="work-entry-badge">Nov 2025 – Dec 2025</span>
-        </div>
-        <p class="work-entry-company">
-          GPH Ispat Limited
-          <span>· Steel Manufacturing, Chittagong</span>
-        </p>
-        <ul class="work-bullets">
-          <li>Analysed end-to-end rebar production using Statistical Process Control (SPC) on 600 BR rebar (20 mm &amp; 25 mm), identifying process instability across subgroups.</li>
-          <li>Investigated production losses and quality variation by documenting major stoppage causes, including cobble events (0–4 per day) and raw-material stockouts.</li>
-          <li>Delivered a formal technical report consolidating findings and recommending process improvements for the rolling department.</li>
-        </ul>
-        <div class="work-entry-links">
-          <a href="https://www.researchgate.net/publication/398410767_A_Report_on_Industrial_Attachment_at_GPH_ISPAT_Limited" target="_blank" rel="noopener" class="work-entry-link">
-            Technical Report
-            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Entry 2: Mess Manager -->
-      <div class="work-entry reveal reveal-delay-1">
-        <div class="work-entry-header">
-          <p class="work-entry-title">Mess Manager</p>
-          <span class="work-entry-badge">Aug 2025 – Sep 2025</span>
-        </div>
-        <p class="work-entry-company">
-          Kazi Nazrul Islam Hall, BUET
-          <span>· Dhaka</span>
-        </p>
-        <ul class="work-bullets">
-          <li>Managed a BDT 1 million operating budget and supervised 15+ staff to deliver 24,000 meals over 30 days, ensuring schedule adherence, cost control, and service continuity.</li>
-          <li>Planned daily procurement from 4 wholesale hubs and applied demand forecasting to optimise inventory and costs.</li>
-          <li>Enabled the reintroduction of premium menus discontinued for 3 years, improving resident satisfaction.</li>
-        </ul>
       </div>
 
     </div>
@@ -1021,184 +500,26 @@
 
     <div class="project-card reveal">
       <div class="project-header">
-        <h3 class="project-title">A Hierarchical Multi-Agent RL Approach to Recover Evolutionarily Stable Strategies in Large-Scale Evolutionary Games</h3>
-        <span class="project-status status-ongoing">Ongoing</span>
+        <h3 class="project-title">Ergonomic Workstation Redesign — Industrial Attachment at GPH Ispat Limited</h3>
+        <span class="project-status status-complete">Completed</span>
       </div>
       <p class="project-desc">
-        Proposes a hierarchical MARL framework to address large-scale evolutionary games by identifying
-        parameter configurations that induce convergence toward an Evolutionarily Stable Strategy (ESS).
-        Classical analytical procedures become computationally intractable at scale; this approach uses
-        PPO-based agents to recover ESS wherever one exists.
+        During an industrial attachment at GPH Ispat Limited (Nov–Dec 2025), conducted a detailed
+        ergonomic and process analysis of the steel production facility. Developed proposals for workstation
+        redesign grounded in anthropometric analysis and SolidWorks modelling. Additional industry visits
+        include BAT Bangladesh, BM Energy Limited, and A1 Polymer Limited.
       </p>
       <div class="project-tags">
-        <span class="project-tag">Evolutionary Game Theory</span>
-        <span class="project-tag">Multi-Agent RL</span>
-        <span class="project-tag">PPO</span>
-        <span class="project-tag">ESS</span>
+        <span class="project-tag">Ergonomics</span>
+        <span class="project-tag">SolidWorks</span>
+        <span class="project-tag">Manufacturing</span>
+        <span class="project-tag">Steel Production</span>
       </div>
       <p class="project-supervisors">
-        <strong>Supervisor:</strong> Dr. Ridwan Al Aziz (IPE, BUET)
+        <strong>Industry Partner:</strong> GPH Ispat Limited · Nov 2025 – Dec 2025
       </p>
     </div>
 
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     ACADEMIC & DATA PROJECTS  ← NEW
-═══════════════════════════════════════════ -->
-<section id="academic-projects">
-  <div class="container">
-    <span class="section-label reveal">Engineering &amp; Analytics</span>
-    <h2 class="section-title reveal reveal-delay-1">Academic &amp; Data <em>Projects</em></h2>
-    <p class="section-subtitle reveal reveal-delay-2">
-      Coursework, self-directed data analytics builds, and engineering design projects.
-    </p>
-    <div class="emerald-rule reveal reveal-delay-2"></div>
-
-    <!-- Filter Tabs -->
-    <div class="proj-filter-tabs reveal reveal-delay-2">
-      <button class="proj-filter-btn active" data-filter="all" onclick="filterProjects(this,'all')">All</button>
-      <button class="proj-filter-btn" data-filter="data"  onclick="filterProjects(this,'data')">Data Analytics</button>
-      <button class="proj-filter-btn" data-filter="eng"   onclick="filterProjects(this,'eng')">Engineering Design</button>
-      <button class="proj-filter-btn" data-filter="code"  onclick="filterProjects(this,'code')">Coding</button>
-    </div>
-
-    <div class="proj-cards-grid">
-
-      <!-- HR Dashboard -->
-      <div class="proj-small-card reveal" data-category="data">
-        <span class="proj-small-type proj-type-data">Data Analytics</span>
-        <p class="proj-small-title">HR Analytics Dashboard — Microsoft Power BI</p>
-        <p class="proj-small-desc">
-          Built an interactive HR dashboard for 1,470 employees tracking headcount, attrition (237 employees; 16.1%), tenure distribution, salary bands, and month-over-month breakdowns. Automated data refresh and filtering.
-        </p>
-        <div class="proj-small-footer">
-          <div class="proj-small-tools">
-            <span class="proj-small-tool">Power BI</span>
-            <span class="proj-small-tool">DAX</span>
-            <span class="proj-small-tool">Data Modeling</span>
-          </div>
-          <a href="https://drive.google.com/file/d/1oO4duGIMnQlz-Skc-zotWtExQgxGfPxT/view?usp=sharing" target="_blank" rel="noopener" class="proj-small-link">
-            View Dashboard
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Coffee Sales Excel -->
-      <div class="proj-small-card reveal reveal-delay-1" data-category="data">
-        <span class="proj-small-type proj-type-data">Data Analytics</span>
-        <p class="proj-small-title">Coffee Sales Data Analysis &amp; Dashboard — Excel</p>
-        <p class="proj-small-desc">
-          Analysed sales data using Excel to gain insights into customer behaviour, product performance, and overall sales trends. Processed and visualised data into a comprehensive, filterable dashboard.
-        </p>
-        <div class="proj-small-footer">
-          <div class="proj-small-tools">
-            <span class="proj-small-tool">Excel</span>
-            <span class="proj-small-tool">Pivot Tables</span>
-            <span class="proj-small-tool">Charts</span>
-          </div>
-          <a href="https://github.com/FH-Prottay/Projects-and-Certificates/tree/main/Excel%20Projects/Project%202" target="_blank" rel="noopener" class="proj-small-link">
-            GitHub
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Olympic EDA -->
-      <div class="proj-small-card reveal reveal-delay-2" data-category="data">
-        <span class="proj-small-type proj-type-data">Data Analytics</span>
-        <p class="proj-small-title">Olympics (1896–2016) Exploratory Data Analysis</p>
-        <p class="proj-small-desc">
-          Analysed and visualised historical data spanning the Olympic Games from Athens 1896 to Rio 2016. Explored medal distributions, country performance trends, gender participation, and athlete demographics.
-        </p>
-        <div class="proj-small-footer">
-          <div class="proj-small-tools">
-            <span class="proj-small-tool">Python</span>
-            <span class="proj-small-tool">Pandas</span>
-            <span class="proj-small-tool">Matplotlib</span>
-          </div>
-          <a href="https://github.com/FH-Prottay/Projects-and-Certificates/tree/main/Data%20Analysis/Olympic%20Project" target="_blank" rel="noopener" class="proj-small-link">
-            GitHub
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Virtual Mouse -->
-      <div class="proj-small-card reveal" data-category="code">
-        <span class="proj-small-type proj-type-code">Coding</span>
-        <p class="proj-small-title">Virtual Mouse via Hand Gestures — Python</p>
-        <p class="proj-small-desc">
-          Used OpenCV, PyAutoGUI, and Mediapipe to create a virtual mouse controlled by hand movements. Captures live webcam feed, detects hand landmarks, and translates specific gestures into cursor actions in real time.
-        </p>
-        <div class="proj-small-footer">
-          <div class="proj-small-tools">
-            <span class="proj-small-tool">Python</span>
-            <span class="proj-small-tool">OpenCV</span>
-            <span class="proj-small-tool">Mediapipe</span>
-          </div>
-          <a href="https://github.com/FH-Prottay/Projects-and-Certificates/tree/main/Python%20Projects/Virtual%20Mouse" target="_blank" rel="noopener" class="proj-small-link">
-            GitHub
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- PowerStrike -->
-      <div class="proj-small-card reveal reveal-delay-1" data-category="eng">
-        <span class="proj-small-type proj-type-eng">Engineering Design</span>
-        <p class="proj-small-title">PowerStrike — Automatic Hammering Machine</p>
-        <p class="proj-small-desc">
-          Led design and feasibility analyses using SolidWorks and ANSYS; created QFD, black-box models, component hierarchies, and functional decomposition. Managed prototype manufacturing, financial analyses, and customer-satisfaction surveys.
-        </p>
-        <div class="proj-small-footer">
-          <div class="proj-small-tools">
-            <span class="proj-small-tool">SolidWorks</span>
-            <span class="proj-small-tool">ANSYS</span>
-            <span class="proj-small-tool">QFD</span>
-          </div>
-          <a href="https://www.researchgate.net/publication/396906501_PowerStrike_A_Motorized_Automatic_Hammering_System_for_Precision_and_Efficiency" target="_blank" rel="noopener" class="proj-small-link">
-            Report
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Greenhouse Automation -->
-      <div class="proj-small-card reveal reveal-delay-2" data-category="eng">
-        <span class="proj-small-type proj-type-eng">Engineering Design</span>
-        <p class="proj-small-title">Greenhouse Automation — Computer Integrated Manufacturing</p>
-        <p class="proj-small-desc">
-          Sensor monitoring and relay control using Arduino for temperature, humidity, soil moisture, and light intensity. Automated environmental management with real-time threshold-based actuator responses.
-        </p>
-        <div class="proj-small-footer">
-          <div class="proj-small-tools">
-            <span class="proj-small-tool">Arduino</span>
-            <span class="proj-small-tool">Sensors</span>
-            <span class="proj-small-tool">CIM</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Foundry -->
-      <div class="proj-small-card reveal" data-category="eng">
-        <span class="proj-small-type proj-type-eng">Engineering Design</span>
-        <p class="proj-small-title">Foundry &amp; Metal Casting</p>
-        <p class="proj-small-desc">
-          Hands-on execution of pattern making, sand mould preparation, molten metal handling, pouring, and post-casting finishing processes in a controlled workshop environment.
-        </p>
-        <div class="proj-small-footer">
-          <div class="proj-small-tools">
-            <span class="proj-small-tool">Pattern Making</span>
-            <span class="proj-small-tool">Sand Moulding</span>
-            <span class="proj-small-tool">Metal Casting</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
   </div>
 </section>
 
@@ -1210,7 +531,7 @@
     <span class="section-label reveal" style="color:#7fd4a0">Credentials</span>
     <h2 class="section-title light reveal reveal-delay-1">Professional <em>Certifications</em></h2>
     <p class="section-subtitle reveal reveal-delay-2" style="color:rgba(232,240,234,0.5)">
-      Industry-recognized credentials from IBM, Microsoft, Accenture, Vanderbilt University, and more.
+      Industry-recognized credentials from IBM, Microsoft, Accenture, and Vanderbilt University.
     </p>
     <div class="emerald-rule reveal reveal-delay-2" style="background:#7fd4a0"></div>
 
@@ -1267,16 +588,6 @@
         </a>
       </div>
 
-      <!-- NEW: Vanderbilt MATLAB -->
-      <div class="cert-card reveal">
-        <span class="cert-issuer">Vanderbilt University · Coursera</span>
-        <p class="cert-name">MATLAB Programming for Engineers and Scientists</p>
-        <p class="cert-skills">MATLAB scripting, numerical methods, data visualisation, simulation, algorithm design</p>
-        <a href="https://drive.google.com/file/d/1qeBGYElDNSt06OVlT5WKvbt333m3mKo0/view?usp=drive_link" target="_blank" rel="noopener" class="cert-link">
-          View Certificate →
-        </a>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1326,7 +637,6 @@
           <span class="skill-pill">Hypothesis Testing</span>
           <span class="skill-pill">ANOVA</span>
           <span class="skill-pill">RSM</span>
-          <span class="skill-pill">SPC</span>
           <span class="skill-pill">Symbolic Regression</span>
         </div>
       </div>
@@ -1364,206 +674,43 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
-     LEADERSHIP & ACTIVITIES  (updated awards)
+     AWARDS
 ═══════════════════════════════════════════ -->
 <section id="awards">
   <div class="container">
-    <span class="section-label reveal">Recognition &amp; Service</span>
-    <h2 class="section-title reveal reveal-delay-1">Leadership &amp; <em>Activities</em></h2>
+    <span class="section-label reveal">Recognition</span>
+    <h2 class="section-title reveal reveal-delay-1">Awards &amp; <em>Leadership</em></h2>
     <div class="emerald-rule reveal reveal-delay-2"></div>
 
-    <div class="activity-stack">
-
-      <div class="activity-item reveal">
-        <span class="activity-icon">🥇</span>
-        <div class="activity-content">
-          <p class="activity-title">1st Place — Undergraduate Research Competition</p>
-          <p class="activity-org">IEOM International Conference 2025</p>
-          <p class="activity-date">2025</p>
-          <p class="activity-desc">Awarded for the paper "A Multi-Agent Reinforcement Learning Approach for Recovering Evolutionarily Stable Strategies in Evolutionary Games Using PPO."</p>
-        </div>
-      </div>
-
-      <div class="activity-item reveal reveal-delay-1">
-        <span class="activity-icon">🚀</span>
-        <div class="activity-content">
-          <p class="activity-title">Vice President</p>
-          <p class="activity-org">BUET Entrepreneurship Development Club (EDC)</p>
-          <p class="activity-date">Feb 2022 – Present</p>
-          <p class="activity-desc">Led end-to-end logistics for three large-scale events (EDC Talk, two seasons), coordinating speakers and on-ground operations for ~100 attendees. Managed BDT 10k–30k budgets and coordinated with corporate partners including BAT, Banglalink, Grameenphone, and Marico.</p>
-        </div>
-      </div>
-
-      <div class="activity-item reveal reveal-delay-2">
-        <span class="activity-icon">👨‍💼</span>
-        <div class="activity-content">
-          <p class="activity-title">Batch Representative — Batch of ~1,300 Students</p>
-          <p class="activity-org">Bangladesh University of Engineering &amp; Technology</p>
-          <p class="activity-date">March 2025 – Present</p>
-          <p class="activity-desc">Represent the entire batch in academic and administrative matters, coordinating communication between students and university authority.</p>
-        </div>
-      </div>
-
-      <div class="activity-item reveal">
-        <span class="activity-icon">🌐</span>
-        <div class="activity-content">
-          <p class="activity-title">Campus Ambassador</p>
-          <p class="activity-org">ISCEA Bangladesh (International Supply Chain Education Alliance)</p>
-          <p class="activity-date">Jun 2024 – Apr 2025</p>
-          <p class="activity-desc">Executed campus outreach at BUET generating 50+ registrations for the ISCEA Global Supply Chain Competition. Coordinated and hosted a seminar linking ISCEA with BUET, converting interest into 14 competing teams.</p>
-        </div>
-      </div>
-
-      <div class="activity-item reveal reveal-delay-1">
-        <span class="activity-icon">📋</span>
-        <div class="activity-content">
-          <p class="activity-title">Class Representative — IPE, Class of 120</p>
-          <p class="activity-org">BUET Department of Industrial &amp; Production Engineering</p>
-          <p class="activity-date">Jan 2023 – Jan 2024</p>
-          <p class="activity-desc">Acted as liaison between students and faculty, coordinating class-level communication and academic issue resolution.</p>
-          <div style="margin-top:8px">
-            <a href="https://drive.google.com/file/d/1ePEGUxmCKBysCA5vAN3_OK1fjsY84vFM/view?usp=sharing" target="_blank" rel="noopener" style="font-size:.79rem;color:#7fd4a0;text-decoration:none;opacity:.8;transition:opacity .2s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8">
-              View Certificate →
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     COMPETITIONS  ← NEW
-═══════════════════════════════════════════ -->
-<section id="competitions">
-  <div class="container">
-    <span class="section-label reveal" style="color:#7fd4a0">Challenge &amp; Innovation</span>
-    <h2 class="section-title light reveal reveal-delay-1">Competitions &amp; <em>Challenges</em></h2>
-    <p class="section-subtitle reveal reveal-delay-2" style="color:rgba(232,240,234,0.5)">
-      National and international competitions spanning business, science, and technology.
-    </p>
-    <div class="emerald-rule reveal reveal-delay-2" style="background:#7fd4a0"></div>
-
-    <div class="comp-grid">
-
-      <div class="comp-card reveal">
-        <p class="comp-event">National Social Business Case Competition</p>
-        <p class="comp-name">Rural Telemedicine Kiosk Model</p>
-        <p class="comp-desc">Designed a rural telemedicine kiosk model with 100 paid subscriptions/month serving ~500 families per kiosk. Built unit economics showing a monthly surplus of BDT 12,500 and a scale-up plan targeting 100,000+ people.</p>
-        <span class="comp-result reached">✓ Pre-Final Round</span>
-      </div>
-
-      <div class="comp-card reveal reveal-delay-1">
-        <p class="comp-event">Hult Prize — BUET Campus Round</p>
-        <p class="comp-name">Household Solar Energy-Sharing Model</p>
-        <p class="comp-desc">Proposed a 20% subsidized solar installation and middle-grid aggregation model for energy resale, producing a USD 3k–5k install ROI case (6–10 year payback) with a blockchain-based peer-to-peer trading framework.</p>
-        <span class="comp-result campus">Campus Round</span>
-      </div>
-
-      <div class="comp-card reveal reveal-delay-2">
-        <p class="comp-event">Bangladesh Economics Summit</p>
-        <p class="comp-name">Economic Policy Challenge</p>
-        <p class="comp-desc">Competed in the inaugural round of the Bangladesh Economics Summit 2025, engaging with macroeconomic policy analysis and presenting data-driven economic arguments.</p>
-        <span class="comp-result reached">✓ 1st Round</span>
-      </div>
-
-      <div class="comp-card reveal">
-        <p class="comp-event">International Astronomy &amp; Astrophysics Competition</p>
-        <p class="comp-name">IAAC 2024</p>
-        <p class="comp-desc">Advanced to the pre-final round in the International Astronomy and Astrophysics Competition, demonstrating strong analytical ability across observational astronomy and physics.</p>
-        <span class="comp-result prefinal">Pre-Final</span>
-      </div>
-
-      <div class="comp-card reveal reveal-delay-1">
-        <p class="comp-event">Youth Math Challenge</p>
-        <p class="comp-name">International Mathematical Olympiad</p>
-        <p class="comp-desc">Reached the pre-final round of the Youth Math Challenge 2022, showcasing problem-solving ability in advanced mathematics and combinatorics.</p>
-        <span class="comp-result prefinal">Pre-Final</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     INDUSTRIAL VISITS  ← NEW
-═══════════════════════════════════════════ -->
-<section id="industrial-visits">
-  <div class="container">
-    <span class="section-label reveal">Site Exposure</span>
-    <h2 class="section-title reveal reveal-delay-1">Industrial <em>Visits</em></h2>
-    <p class="section-subtitle reveal reveal-delay-2">
-      Practical exposure to manufacturing operations, quality systems, and supply chain management across diverse industries.
-    </p>
-    <div class="emerald-rule reveal reveal-delay-2"></div>
-
-    <div class="visit-grid">
-
-      <div class="visit-card reveal">
-        <div class="visit-icon-wrap">🏭</div>
+    <div class="awards-grid">
+      <div class="award-card reveal">
+        <span class="award-icon">🥇</span>
         <div>
-          <p class="visit-name">BAT Bangladesh</p>
-          <p class="visit-desc">Analysed PMD (Preventive Maintenance Department) and SMD (Sales &amp; Marketing Department) facilities, gaining practical exposure to production flow, operations management, and quality control practices.</p>
+          <p class="award-title">1st Place — Undergraduate Research Competition</p>
+          <p class="award-meta">IEOM International Conference 2025 · Paper: Multi-Agent RL for Recovering ESS</p>
         </div>
       </div>
-
-      <div class="visit-card reveal reveal-delay-1">
-        <div class="visit-icon-wrap">🔩</div>
+      <div class="award-card reveal reveal-delay-1">
+        <span class="award-icon">👨‍💼</span>
         <div>
-          <p class="visit-name">A1 Polymer Limited</p>
-          <p class="visit-desc">Evaluated full-scale operations spanning cPVC pipe extrusion, metal pipe processing, and galvanising. Identified critical gaps in worker safety protocols and proposed improvements to reduce operational waste.</p>
+          <p class="award-title">Batch Representative — Batch of 1300</p>
+          <p class="award-meta">Bangladesh University of Engineering &amp; Technology · March 2025 – Present</p>
         </div>
       </div>
-
-      <div class="visit-card reveal reveal-delay-2">
-        <div class="visit-icon-wrap">⚡</div>
+      <div class="award-card reveal reveal-delay-2">
+        <span class="award-icon">📋</span>
         <div>
-          <p class="visit-name">BM Energy Limited</p>
-          <p class="visit-desc">Assessed process flow, safety practices, and supply chain coordination across operational units in an energy production facility.</p>
+          <p class="award-title">Class Representative — IPE, Class of 120</p>
+          <p class="award-meta">BUET Department of Industrial &amp; Production Engineering · Jan 2023 – Jan 2024</p>
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     REFERENCES  ← NEW
-═══════════════════════════════════════════ -->
-<section id="references">
-  <div class="container">
-    <span class="section-label reveal" style="color:#7fd4a0">Testimonials &amp; Endorsements</span>
-    <h2 class="section-title light reveal reveal-delay-1">Academic <em>References</em></h2>
-    <p class="section-subtitle reveal reveal-delay-2" style="color:rgba(232,240,234,0.5)">
-      Available upon request. Contact details provided below for prospective PhD supervisors or employers.
-    </p>
-    <div class="emerald-rule reveal reveal-delay-2" style="background:#7fd4a0"></div>
-
-    <div class="ref-grid">
-
-      <div class="ref-card reveal">
-        <p class="ref-name">Dr. Syed Mithun Ali</p>
-        <p class="ref-role">Professor</p>
-        <p class="ref-dept">Department of Industrial and Production Engineering<br>Bangladesh University of Engineering and Technology (BUET)</p>
-        <div class="ref-divider"></div>
-        <div class="ref-contact-row">
-          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="#7fd4a0" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          <a href="mailto:mithun@ipe.buet.ac.bd">mithun@ipe.buet.ac.bd</a>
+      <div class="award-card reveal reveal-delay-3">
+        <span class="award-icon">🌐</span>
+        <div>
+          <p class="award-title">International Competition Participation</p>
+          <p class="award-meta">Astronomy &amp; Astrophysics (prefinal 2024) · Youth Math Challenge (prefinal 2022) · Bangladesh Economics Summit (1st round 2025) · Hult Prize BUET (2025)</p>
         </div>
       </div>
-
-      <div class="ref-card reveal reveal-delay-1">
-        <p class="ref-name">S M Mujahidul Islam Shafi</p>
-        <p class="ref-role">Senior Manager, Rolling Department</p>
-        <p class="ref-dept">GPH Ispat Limited<br>Chittagong, Bangladesh</p>
-        <div class="ref-divider"></div>
-        <div class="ref-contact-row">
-          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="#7fd4a0" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          <a href="mailto:mujahid.production@gphispat.com.bd">mujahid.production@gphispat.com.bd</a>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1592,16 +739,6 @@
           <div>
             <span class="contact-item-label">Email</span>
             <span class="contact-item-value">fahimulhaq2001@gmail.com</span>
-          </div>
-        </a>
-
-        <a href="tel:+8801971077353" class="contact-item reveal reveal-delay-3">
-          <div class="contact-item-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          </div>
-          <div>
-            <span class="contact-item-label">Phone</span>
-            <span class="contact-item-value">+880-1971-077353</span>
           </div>
         </a>
 
@@ -1650,14 +787,6 @@
             </div>
             <p class="social-card-name">ORCID</p>
             <p class="social-card-handle">0009-0001-5003-7720</p>
-          </a>
-
-          <a href="https://github.com/FH-Prottay/Projects-and-Certificates" target="_blank" rel="noopener" class="social-card">
-            <div class="social-card-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            </div>
-            <p class="social-card-name">GitHub</p>
-            <p class="social-card-handle">FH-Prottay</p>
           </a>
 
         </div>
@@ -1713,29 +842,5 @@
 </div>
 
 <script src="script.js"></script>
-
-<!-- ═══════════════════════════════════════════
-     FILTER SCRIPT FOR ACADEMIC PROJECTS
-═══════════════════════════════════════════ -->
-<script>
-  function filterProjects(btn, filter) {
-    // Update active button
-    document.querySelectorAll('.proj-filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    // Show/hide cards
-    document.querySelectorAll('.proj-small-card').forEach(card => {
-      const cat = card.getAttribute('data-category');
-      if (filter === 'all' || cat === filter) {
-        card.style.display = 'flex';
-        // Re-trigger reveal if not yet visible
-        card.classList.add('reveal');
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
-</script>
-
 </body>
 </html>
